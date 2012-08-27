@@ -53,20 +53,31 @@ Easy handling of multiple receive options with multiMatch_P()::
 			    F("button"), F("slider="), F("switch="));
 	    switch (match) {
 	    case 0: /* button */
+		{
 		Serial.print(F("button: pressed"));
 		break;
+		}
+
 	    case 1: /* slider */
+		{
 		int slider = wifly.parseInt();
 		Serial.print(F("slider: "));
 		Serial.println(slider);
 		break;
+		}
+
 	    case 2: /* switch */
+		{
 		char ch = wifly.read();
 		Serial.print(F("switch: "));
 		Serial.println(ch);
 		break;
+		}
+
 	    default: /* timeout */
+		{
 		break;
+		}
 	    }
 	}
 
